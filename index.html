@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="Create beautiful A4 school project cover pages with Front Page Maker.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Front Page Maker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient a1"></div><div class="ambient a2"></div>
+  <header class="topbar glass">
+    <a class="brand" href="#" aria-label="Front Page Maker home"><span class="brand-icon">✦</span><span>Front Page <b>Maker</b></span></a>
+    <div class="top-actions">
+      <button class="icon-btn" id="installBtn" hidden>＋ Install</button>
+      <button class="icon-btn" id="savedBtn">▤ My designs</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero glass">
+      <div class="eyebrow"><span class="live-dot"></span> YOUR CREATIVE SCHOOL STUDIO</div>
+      <h1>Make your project<br><span class="gradient-text">cover stand out.</span></h1>
+      <p>Design beautiful, print-ready A4 front pages with elegant templates, custom colours and your own details.</p>
+      <div class="hero-actions">
+        <button class="primary-btn" id="newBtn">＋ Create new project</button>
+        <button class="secondary-btn" id="browseBtn">Explore templates</button>
+      </div>
+      <div class="hero-foot"><span>✧ A4 portrait</span><span>◈ Save on this device</span><span>↗ PNG & PDF</span></div>
+    </section>
+
+    <section class="section" id="templates">
+      <div class="section-head"><div><div class="eyebrow">START WITH A STYLE</div><h2>Template gallery</h2></div><span class="count-pill">12 DESIGNS</span></div>
+      <div class="template-grid" id="templateGrid"></div>
+    </section>
+
+    <section class="studio glass" id="studio">
+      <div class="section-head"><div><div class="eyebrow">MAKE IT YOURS</div><h2>Cover page studio</h2></div><span class="status-pill"><i></i> Live preview</span></div>
+      <div class="studio-layout">
+        <div class="controls">
+          <div class="field-group">
+            <h3>Project details</h3>
+            <label>School name<input id="school" value="ST. ANDREW'S HIGH SCHOOL"></label>
+            <label>Project title<input id="title" value="MY SCHOOL PROJECT"></label>
+            <label>Subject<input id="subject" value="Social Science"></label>
+            <label>Student name<input id="student" placeholder="Enter your name"></label>
+            <div class="two-col">
+              <label>Class<input id="className" placeholder="Class 10"></label>
+              <label>Roll number<input id="roll" placeholder="01"></label>
+            </div>
+            <label>Teacher's name<input id="teacher" placeholder="Teacher's name"></label>
+            <label>Academic session<input id="session" value="2026–2027"></label>
+          </div>
+          <div class="field-group">
+            <h3>Appearance</h3>
+            <label>Theme<select id="theme">
+              <option value="aurora">Aurora glass</option><option value="ocean">Ocean blue</option><option value="sunset">Sunset glow</option><option value="emerald">Emerald</option><option value="violet">Violet galaxy</option><option value="classic">Classic paper</option>
+            </select></label>
+            <label>Heading font<select id="font"><option value="Georgia">Elegant serif</option><option value="Arial">Modern sans</option><option value="Trebuchet MS">Rounded</option><option value="Times New Roman">Classic</option></select></label>
+            <label>Upload school logo<input id="logo" type="file" accept="image/*"></label>
+            <button class="secondary-btn full" id="clearLogo">Remove logo</button>
+          </div>
+          <div class="field-group">
+            <h3>Save & export</h3>
+            <input id="designName" placeholder="Design name (e.g. History project)">
+            <button class="primary-btn full" id="saveBtn">▣ Save design</button>
+            <div class="two-col">
+              <button class="secondary-btn" id="pngBtn">↓ PNG image</button>
+              <button class="secondary-btn" id="pdfBtn">▤ Print / PDF</button>
+            </div>
+            <p class="hint">Your saved designs stay in this browser on this device.</p>
+          </div>
+        </div>
+        <div class="preview-wrap">
+          <div class="preview-top"><span>PAGE PREVIEW</span><span>A4 · PORTRAIT</span></div>
+          <div class="paper" id="paper">
+            <div class="paper-frame">
+              <div class="paper-logo" id="paperLogo">✦</div>
+              <div class="paper-school" id="pSchool">ST. ANDREW'S HIGH SCHOOL</div>
+              <div class="paper-rule"></div>
+              <div class="paper-kicker">PROJECT WORK</div>
+              <div class="paper-title" id="pTitle">MY SCHOOL PROJECT</div>
+              <div class="paper-subject" id="pSubject">Social Science</div>
+              <div class="paper-art"><span>✧</span><span>◈</span><span>✦</span></div>
+              <div class="paper-info">
+                <div><small>SUBMITTED BY</small><b id="pStudent">Student name</b></div>
+                <div><small>CLASS / ROLL NO.</small><b id="pClass">Class / Roll</b></div>
+                <div><small>SUBMITTED TO</small><b id="pTeacher">Teacher's name</b></div>
+                <div><small>ACADEMIC SESSION</small><b id="pSession">2026–2027</b></div>
+              </div>
+              <div class="paper-bottom">LEARN · CREATE · DISCOVER</div>
+            </div>
+          </div>
+          <p class="preview-note">Preview is designed for A4 printing. Choose “Print / PDF” to save a PDF from your browser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="saved-section glass" id="savedSection" hidden>
+      <div class="section-head"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>My saved designs</h2></div><button class="text-btn" id="closeSaved">Close ×</button></div>
+      <div id="savedList" class="saved-list"></div>
+    </section>
+    <footer><span class="brand-icon">✦</span> Front Page Maker <span>Made for creative minds.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
